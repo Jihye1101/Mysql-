@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS tbl_country;
+
+CREATE TABLE IF NOT EXISTS tbl_country
+(
+    country_code INT AUTO_INCREMENT PRIMARY KEY,
+    country_name VARCHAR(255) DEFAULT '한국',
+    population VARCHAR(255) DEFAULT '0명',
+    add_day DATE DEFAULT (current_date), 
+    add_time1 DATETIME DEFAULT (CURRENT_TIME),
+    add_time2 DATETIME DEFAULT (CURRENT_TIMESTAMP),
+    add_time3 DATETIME DEFAULT (NOW())
+) DEFAULT CHARSET=UTF8;
+-- ) ENGINE=INNODB; 인데, 나는 한국어 인식 오류때문에 ) DEFAULT CHARSET=UTF8;
+
+INSERT 
+  INTO tbl_country
+VALUES (NULL, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+
+SELECT * FROM tbl_country;
